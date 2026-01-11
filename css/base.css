@@ -1,0 +1,186 @@
+@import url("reset.css");
+@import url("components.css");
+@import url('form.css');
+@import url('partners.css');
+@import url('home.css');
+@import url('services-faq-legals.css');
+@import url('responsive.css');
+
+/* ========== VARIABLES ========== */
+:root {
+        /* Font families */
+    --font-signature: 'Love Light', cursive;
+    --font-title: 'Raleway', sans-serif;
+    --font-text: 'Inter', sans-serif;
+
+    /* Font sizes – mobile first */
+    --fs-h1: 2.8rem;        /* ~32px */
+    --fs-h2: 1.3rem;      /* ~24px */
+    --fs-h3: 1rem;
+    --fs-body: 0.9rem;      /* ~16px */
+
+    /* Line heights */
+    --lh-title: 1.3;
+    --lh-text: 1.6;
+
+    /* Font weights */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+
+    /* Couleurs principales */
+    --color-green-sauge: #78866B;
+    --color-green-light: #95b58ef2;
+    --color-beige-doux: #f0e4d0ff;
+    --color-brown-terre: #5E4B3C;
+    --color-sand: #d3c8a3ff;
+  
+    /* Texte & contraste */
+    --color-text-main: #a6d4b4;
+    --color-text-glow: #afffaf;
+  
+    /* Ombres & effets */
+    /* --shadow-soft: 0 4px 8px rgba(0, 255, 0, 0.3);
+    --shadow-glow: 0 0 15px #7fff7f;
+    --shadow-intense: 0 0 25px #7fff7f, 0 0 50px #5f8c4f; */
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);   
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.2);
+  
+    /* Typo */
+    --font-main: 'Oswald', sans-serif;
+}
+
+em, strong {
+    font-style: normal;   /* supprime l’italique par défaut */
+    font-weight: normal;  /* supprime le gras par défaut */
+}
+
+body {
+    font-family: var(--font-text);
+    background-color: var(--color-beige-doux);
+    color: rgba(23, 22, 22, 0.721);
+}
+
+/* Typos*/
+h1 {
+    text-align: center;
+    font-weight: var(--fw-medium);
+    font-family: var(--font-signature);
+    letter-spacing: 2px;
+    font-size: var(--fs-h1);
+    text-shadow: var(--shadow-light);
+        line-height: 1.2;
+}
+
+h2 {
+    font-family: var(--font-title);
+    color: var(--color-brown-terre);
+    margin: 0.5rem;
+    text-align: center;
+    font-size: var(--fs-h2);
+    text-shadow: var(--shadow-light);
+}
+
+h3 {
+    font-family: var(--fs-h3);
+    color: var(--color-brown-terre);
+    text-align: left;
+    font-size: var(--fs-h3);
+    text-shadow: var(--shadow-light);
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+a {
+  color: var(--color-green-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-green-light);
+  cursor: pointer;
+}
+
+.hero .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;  /* espace entre les images et le mot */
+}
+
+.hero .name img {
+    max-width: 50px;  /* limite la taille pour ne pas dépasser */
+    height: auto;
+}
+
+/* inversion de la 2e image */
+.hero .name img.mirrored {
+    transform: scaleX(-1);
+}
+
+.hero .name p, .comment p {
+    font-size: var(--fs-body);
+    text-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+.welcome > p {
+    font-size: var(--fs-body);
+    text-align: center;
+    margin: 0 2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 1rem 0;
+    margin-top: 0;
+    display: flex;             /* active flex */
+    flex-direction: column;
+    justify-content: center;   /* centre horizontalement */
+    align-items: center;       /* centre verticalement si nécessaire */
+    gap: .5rem;                 /* espace entre les éléments */
+}
+
+li {
+    font-size: var(--fs-body);
+    text-shadow: var(--shadow-light);
+}
+
+footer a {
+    color: var(--color-brown-terre);
+}
+
+.welcome , .hero , .testify , .contact-section , .partners-container , 
+.about , .services-section , .faq-section , .legals-section , footer {
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact-message p {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/*------ contact message alert -------*/
+#contact-message p.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
