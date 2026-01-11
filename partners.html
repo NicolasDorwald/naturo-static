@@ -3,67 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./css/base.css">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Love+Light&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
-    <title>Accueil</title>
+    <title>Partenaires</title>
 </head>
 <body>
     <header>
         <div class="banner">
             <!-- <span class="slogan">Harmonie & Nature</span> -->
-            <img id="menu-burger" src="../images/hamburger-button-computer-icons-menu-menu-84abc76fcb71e373a9a6c5b7d7d70d2a.png" alt="burger menu">
+            <img id="menu-burger" src="./images/hamburger-button-computer-icons-menu-menu-84abc76fcb71e373a9a6c5b7d7d70d2a.png" alt="burger menu">
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Jane Doe</h1>
-        <div class="name"> 
-            <img src="../images/deco-line.png" alt="ligne décorative">
-            <p>naturopathe</p>
-            <img class="mirrored" src="../images/deco-line.png" alt="ligne décorative">
+<section class="partners-container">
+    <a class="return" href="index.html"> ⬅ Retour à l'accueil</a>
+    <h2>Nos sites partenaires</h2>
+    <div class="partners-grid">
+        <!-- Partenaire 1 -->
+        <div class="partner-card">
+            <img src="./images/partner01.png" alt="Harmonie & Plantes" />
+            <h3><a href="#" target="_blank">Harmonie & Plantes</a></h3>
+            <p>Boutique spécialisée dans les plantes médicinales et les huiles essentielles artisanales.</p>
         </div>
-    </section>
-    <section class="welcome">
-        <h2>Bienvenue</h2>
-        <p>Votre <em>naturopathe</em> à votre écoute pour harmoniser votre corps et votre esprit 
-            grâce à des méthodes naturelles et personnalisées afin de prendre 
-            soin de votre <strong>santé</strong> et de votre équilibre.</p>
-        <a id="open-calendly" class="btn-rdv">Prendre un rendez-vous</a>
-    </section>
 
-    <section class="about">
-        <h2>Mes accompagnements</h2>
-        <div class="services">
-            <figure>
-                <img src="../images/stress.svg" alt="icône gestion du stress">
-                <figcaption>Gestion du stress</figcaption>
-            </figure>
-            <figure>
-                <img src="../images/nutrition.svg" alt="icône alimentation saine">
-                <figcaption>Nutrition & aromathérapie</figcaption>
-            </figure>
-            <figure>    
-                <img src="../images/bilan.svg" alt="icône bilan">
-                <figcaption>Bilan personnalisé</figcaption>
-            </figure>
-        </div> 
-            <a id="open-calendly" class="btn-rdv">Prendre un rendez-vous</a>
-    </section>
+        <!-- Partenaire 2 -->
+        <div class="partner-card">
+            <img src="./images/partner06.png" alt="Vitalité Yoga" />
+            <h3><a href="#" target="_blank">Vitalité Yoga</a></h3>
+            <p>Studio de yoga et méditation proposant des cours en ligne et en présentiel.</p>
+        </div>
 
-    <section class="testify">
-        <h2>Témoignages</h2>
-        <div class="comments">
-            <div class="comment">
-                <p>"Grâce à Jane Doe, j'ai retrouvé mon énergie et mon bien-être au quotidien."</p>
-                <p>"Les conseils en nutrition m'ont aidé à adopter une alimentation plus saine."</p>
-            </div>
-            <a id="open-calendly" class="btn-rdv">Prendre un rendez-vous</a>
-    </section>
+        <!-- Partenaire 3 -->
+        <div class="partner-card">
+            <img src="./images/partner03.png" alt="L’Atelier des Saveurs Saines" />
+            <h3><a href="#" target="_blank">L’Atelier des Saveurs Saines</a></h3>
+            <p>Recettes et ateliers pour cuisiner sainement et gourmand.</p>
+        </div>
+
+        <!-- Partenaire 4 -->
+        <div class="partner-card">
+            <img src="./images/partner04.png" alt="Énergie Naturelle" />
+            <h3><a href="#" target="_blank">Énergie Naturelle</a></h3>
+            <p>Centre proposant massages, réflexologie et soins énergétiques.</p>
+        </div>
+
+        <!-- Partenaire 5 -->
+        <div class="partner-card">
+            <img src="./images/partner05.png" alt="Cosmétiques Bio & Éthique" />
+            <h3><a href="#" target="_blank">Cosmétiques Bio & Éthique</a></h3>
+            <p>Cosmétiques 100% naturels et respectueux de l’environnement.</p>
+        </div>
+
+        <!-- Partenaire 6 -->
+        <div class="partner-card">
+            <img src="./images/partner02.png" alt="Respire Zen" />
+            <h3><a href="#" target="_blank">Respire Zen</a></h3>
+            <p>Cours de respiration et méditation guidée pour réduire le stress et améliorer le sommeil.</p>
+        </div>
+    </div>
+</section>
 
     <footer>
         <ul>
@@ -109,22 +112,22 @@
         </ul>
     </footer>
 
-    <div class="modal-menu" id="modal-menu">
-        <div class="modal-content">
-            <span class="close" id="closeBtn">&times;</span>                         
-            <div class="links">
-                <a href="index.html">Accueil</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-                <a href="partners.html">Sites partenaires</a>
-                <a href="faq.html">F.A.Q.</a>
-            </div>
+<div class="modal-menu" id="modal-menu">
+    <div class="modal-content">
+        <span class="close" id="closeBtn">&times;</span>                         
+        <div class="links">
+            <a href="index.html">Accueil</a>
+            <a href="/services">Services</a>
+            <a href="/contact">Contact</a>
+            <a href="/partners">Sites partenaires</a>
+            <a href="/faq">F.A.Q.</a>
         </div>
     </div>
-    
-    <script src="../js/burgerMenu.js"></script>
+</div>
+
+    <script src="./js/burgerMenu.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <script src="../js/calendly.js"></script>
-    <script src="../js/contact.js"></script>
+    <script src="./js/calendly.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 </html>
