@@ -1,8 +1,8 @@
 .banner {
     display: flex;
-    align-items: center;         /* centre verticalement */
-    justify-content: center;     /* texte centré horizontalement */
-    position: relative;          /* pour positionner le burger */
+    align-items: center;         
+    justify-content: center;    
+    position: relative;       
     height: 100px;
     padding: 0 20px;
     background-image: 
@@ -15,14 +15,14 @@
     position: absolute;
     right: 20px;
     top: 20px;
-    width: 40px;
-    height: auto;
-    cursor: pointer;
+    /* height: auto;
+    cursor: pointer; */
+    padding: 6px;
+    width: 60px;
+    /* height: auto; */
 }
 
 /*----------- burger modal -----------*/
-
-/* overlay du fond */
 .modal-menu {
     position: fixed;
     inset: 0;
@@ -33,7 +33,7 @@
     transition: opacity 0.3s ease;
     z-index: 1000;
     display: flex;
-    justify-content: flex-end; /* menu à droite */
+    justify-content: flex-end; 
 }
 
 /* modale visible */
@@ -55,7 +55,7 @@
     flex-direction: column;
     justify-content: space-around;
     box-shadow: var(--shadow-medium);
-    transform: translateX(100%); /* hors écran à droite */
+    transform: translateX(100%); 
     transition: transform 0.3s ease;
     position: relative;
     border-radius: 10px 0 0 10px;
@@ -94,9 +94,7 @@
     color: var(--color-green-light);
 }
 
-
 /*--------------- bouton rdv -----------------*/
-
 .btn-rdv {
     text-align: center;
     background-color: var(--color-green-sauge);
@@ -112,7 +110,6 @@
     max-width: 250px;
     box-shadow: var(--shadow-medium);
 }
-
 
 /*---------- footer ------------*/
 footer .social-links {
@@ -135,8 +132,7 @@ footer .social-links li a:hover svg {
   transform: scale(1.2);
 }
 
-.faq-content , .legal-container , 
-.service {
+.faq-content , .legal-container , .service {
     max-width: 900px;
     margin: 0 auto;
     padding: 1rem;
@@ -146,8 +142,7 @@ article {
     margin: .8rem .6rem ;
 }
 
-article > p , .legal-container > p ,
-.service > p {
+article > p , .legal-container > p , .service > p {
     font-size: var(--fs-body);
     text-shadow: var(--shadow-light);
     margin-bottom: 1rem;

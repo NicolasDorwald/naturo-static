@@ -1,35 +1,44 @@
-function initBurgerMenu() {
-  const menuBurger = document.getElementById("menu-burger");
-  const modalMenu = document.getElementById("modal-menu");
-  const closeBtn = document.getElementById("closeBtn");
-  const modalContent = modalMenu.querySelector(".modal-content");
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBurger = document.getElementById("menu-burger");
+    const modalMenu = document.getElementById("modal-menu");
+    const closeBtn = document.getElementById("closeBtn");
+    const modalContent = modalMenu?.querySelector(".modal-content");
 
-  if (!menuBurger || !modalMenu || !closeBtn || !modalContent) return;
+    if (!menuBurger || !modalMenu || !closeBtn || !modalContent) return;
 
-  // ouvrir
-  menuBurger.addEventListener("click", () => {
-    modalMenu.classList.add("visible");
-  });
+    // initialiser aria
+    menuBurger.setAttribute("aria-expanded", "false");
+    modalMenu.setAttribute("aria-hidden", "true");
 
-  // fermer avec croix
-  closeBtn.addEventListener("click", () => {
-    modalMenu.classList.remove("visible");
-  });
+    // fonction pour fermer le menu
+    const closeMenu = () => {
+        modalMenu.classList.remove("visible");
+        menuBurger.setAttribute("aria-expanded", "false");
+        modalMenu.setAttribute("aria-hidden", "true");
+        menuBurger.focus(); // remettre le focus sur le bouton burger
+    };
 
-  // fermer avec clic sur overlay
-  modalMenu.addEventListener("click", () => {
-    modalMenu.classList.remove("visible");
-  });
+    // ouvrir menu
+    menuBurger.addEventListener("click", () => {
+        modalMenu.classList.add("visible");
+        menuBurger.setAttribute("aria-expanded", "true");
+        modalMenu.setAttribute("aria-hidden", "false");
+        closeBtn.focus(); // focus sur le bouton fermer
+    });
 
-  // stopper propagation dans le contenu
-  modalContent.addEventListener("click", (e) => e.stopPropagation());
+    // fermer menu avec croix
+    closeBtn.addEventListener("click", closeMenu);
 
-  // fermeture avec Esc
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      modalMenu.classList.remove("visible");
-    }
-  });
-}
+    // fermer avec clic sur overlay
+    modalMenu.addEventListener("click", closeMenu);
 
-document.addEventListener("DOMContentLoaded", initBurgerMenu);
+    // stopper propagation dans le contenu
+    modalContent.addEventListener("click", (e) => e.stopPropagation());
+
+    // fermeture avec Esc
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modalMenu.classList.contains("visible")) {
+        closeMenu();
+        }
+    });
+});

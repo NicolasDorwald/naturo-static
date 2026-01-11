@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./css/base.css">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <link rel="icon" href="./images/favicon2.svg" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,131 +16,103 @@
     <title>Contact</title>
 </head>
 <body>
-    <header>
-        <div class="banner">
-            <!-- <span class="slogan">Harmonie & Nature</span> -->
-            <img id="menu-burger" src="./images/hamburger-button-computer-icons-menu-menu-84abc76fcb71e373a9a6c5b7d7d70d2a.png" alt="burger menu">
+<header>
+    <div class="banner">
+        <button 
+            id="menu-burger"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="main-menu">
+            <img 
+                src="./images/hamburger-button-computer-icons-menu-menu-84abc76fcb71e373a9a6c5b7d7d70d2a.png"
+                alt=""
+                aria-hidden="true">
+        </button>
+    </div>
+</header>
+<main>
+    <section class="contact-section">
+        <a class="return" href="index.html"> ⬅ Retour à l'accueil</a>
+        <h2>Contact & prise de rendez-vous</h2>
+        <p>
+            Vous pouvez utiliser ce formulaire pour prendre rendez-vous ou poser une question.
+            Je vous répondrai dans les plus brefs délais.
+        </p>
+
+    <form action="https://formspree.io/f/mzddpwgd" method="POST" class="contact-form" id="contactForm">
+        <div class="form-group">
+            <label for="name">Nom *</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom">
         </div>
-    </header>
-
-<section class="contact-section">
-    <a class="return" href="index.html"> ⬅ Retour à l'accueil</a>
-    <h2>Contact & prise de rendez-vous</h2>
-    <p>
-        Vous pouvez utiliser ce formulaire pour prendre rendez-vous ou poser une question.
-        Je vous répondrai dans les plus brefs délais.
-    </p>
-
-  <form action="https://formspree.io/f/mzddpwgd" method="POST" class="contact-form" id="contactForm">
-    <!-- Nom -->
-    <div class="form-group">
-      <label for="name">Nom *</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Votre nom"
-      >
-    </div>
-
-    <!-- Email -->
-    <div class="form-group">
-      <label for="email">Email *</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="exemple@email.com"
-      >
-    </div>
-
-    <!-- Téléphone -->
-    <div class="form-group">
-      <label for="phone">Téléphone</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="06 12 34 56 78"
-      >
-    </div>
-
-    <!-- Type de demande -->
-    <div class="form-group">
-      <label for="requestType">Type de demande *</label>
-      <select id="requestType" name="requestType" required>
-        <option value="">-- Choisissez une option --</option>
-        <option value="rdv">Prise de rendez-vous</option>
-        <option value="question">Question / information</option>
-      </select>
-    </div>
-
-    <!-- Message -->
-    <div class="form-group">
-      <label for="message">Message *</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="5"
-        required
-        placeholder="Décrivez votre demande..."
-      ></textarea>
-    </div>
-
-    <!-- Bouton -->
-    <button type="submit" class="btn-rdv">
-      Envoyer la demande
-    </button>
-    <div id="contact-message"></div>
-  </form>
-</section>
-
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="exemple@email.com">
+        </div>
+        <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+        </div>
+        <div class="form-group">
+            <label for="requestType">Type de demande *</label>
+            <select id="requestType" name="requestType" required aria-required="true">
+                <option value="">-- Choisissez une option --</option>
+                <option value="rdv">Prise de rendez-vous</option>
+                <option value="question">Question / information</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" 
+            required placeholder="Décrivez votre demande..."></textarea>
+        </div>
+        <button type="submit" class="btn-rdv">Envoyer la demande</button>
+        <div role="alert" id="contact-message"></div>
+    </form>
+    </section>
+</main>
 <footer>
-        <ul>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="legals.html">Mentions légales</a></li>
-            <li><a href="faq.html">F.A.Q.</a></li>
-            <li><a href="partners.html">Partenaires</a></li>
-        </ul>
-        <ul class="social-links">
-            <li>
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                <!-- Facebook SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#4267B2" viewBox="0 0 24 24">
-                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54v-2.205c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.465h-1.26c-1.243 0-1.63.771-1.63 1.562v1.873h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
-                </svg>
-            </a>
-            </li>
-            <li>
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <!-- Instagram SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#C13584" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.069 1.645.069 4.849s-.012 3.584-.07 4.849c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.645.069-4.849.069s-3.584-.012-4.849-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.772.131 4.603.403 3.635 1.371 2.667 2.339 2.395 3.508 2.336 4.788.013 8.332 0 8.741 0 12c0 3.259.013 3.668.072 4.948.059 1.28.331 2.449 1.299 3.417.968.968 2.137 1.24 3.417 1.299C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.28-.059 2.449-.331 3.417-1.299.968-.968 1.24-2.137 1.299-3.417.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.059-1.28-.331-2.449-1.299-3.417C19.397.403 18.228.131 16.948.072 15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                </svg>
-            </a>
-            </li>
-            <li>
-            <a href="https://twitter.com/" target="_blank" aria-label="X">
-                <!-- X / Twitter SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1DA1F2" viewBox="0 0 24 24">
-                <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.918 4.918 0 0 0-8.38 4.482A13.95 13.95 0 0 1 1.671 3.149a4.918 4.918 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.922 4.922 0 0 0 4.6 3.417 9.867 9.867 0 0 1-6.102 2.105c-.396 0-.788-.023-1.175-.068a13.945 13.945 0 0 0 7.548 2.212c9.058 0 14.01-7.513 14.01-14.01 0-.213-.005-.425-.014-.636A10.025 10.025 0 0 0 24 4.557z"/>
-                </svg>
-            </a>
-            </li>
-            <li>
-            <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
-                <!-- LinkedIn SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.025-3.035-1.849-3.035-1.849 0-2.133 1.445-2.133 2.939v5.665h-3.554V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.372-1.849 3.602 0 4.268 2.368 4.268 5.452v6.288zM5.337 7.433c-1.144 0-2.069-.927-2.069-2.069 0-1.144.926-2.07 2.069-2.07 1.143 0 2.069.926 2.069 2.07 0 1.142-.926 2.069-2.069 2.069zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.555C0 23.23.792 24 1.771 24h20.451c.979 0 1.772-.77 1.772-1.722V1.723C23.997.77 23.204 0 22.225 0z"/>
-                </svg>
-            </a>
-            </li>
-        </ul>
-        </ul>
+    <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legals.html">Mentions légales</a></li>
+        <li><a href="faq.html">F.A.Q.</a></li>
+        <li><a href="partners.html">Partenaires</a></li>
+    </ul>
+    <ul class="social-links">
+        <li>
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <!-- Facebook SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#4267B2" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54v-2.205c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.465h-1.26c-1.243 0-1.63.771-1.63 1.562v1.873h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+        </a>
+        </li>
+        <li>
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+            <!-- Instagram SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#C13584" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.069 1.645.069 4.849s-.012 3.584-.07 4.849c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.645.069-4.849.069s-3.584-.012-4.849-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.772.131 4.603.403 3.635 1.371 2.667 2.339 2.395 3.508 2.336 4.788.013 8.332 0 8.741 0 12c0 3.259.013 3.668.072 4.948.059 1.28.331 2.449 1.299 3.417.968.968 2.137 1.24 3.417 1.299C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.28-.059 2.449-.331 3.417-1.299.968-.968 1.24-2.137 1.299-3.417.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.059-1.28-.331-2.449-1.299-3.417C19.397.403 18.228.131 16.948.072 15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+        </a>
+        </li>
+        <li>
+        <a href="https://twitter.com/" target="_blank" aria-label="X">
+            <!-- X / Twitter SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1DA1F2" viewBox="0 0 24 24">
+            <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.918 4.918 0 0 0-8.38 4.482A13.95 13.95 0 0 1 1.671 3.149a4.918 4.918 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.922 4.922 0 0 0 4.6 3.417 9.867 9.867 0 0 1-6.102 2.105c-.396 0-.788-.023-1.175-.068a13.945 13.945 0 0 0 7.548 2.212c9.058 0 14.01-7.513 14.01-14.01 0-.213-.005-.425-.014-.636A10.025 10.025 0 0 0 24 4.557z"/>
+            </svg>
+        </a>
+        </li>
+        <li>
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+            <!-- LinkedIn SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.025-3.035-1.849-3.035-1.849 0-2.133 1.445-2.133 2.939v5.665h-3.554V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.372-1.849 3.602 0 4.268 2.368 4.268 5.452v6.288zM5.337 7.433c-1.144 0-2.069-.927-2.069-2.069 0-1.144.926-2.07 2.069-2.07 1.143 0 2.069.926 2.069 2.07 0 1.142-.926 2.069-2.069 2.069zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.555C0 23.23.792 24 1.771 24h20.451c.979 0 1.772-.77 1.772-1.722V1.723C23.997.77 23.204 0 22.225 0z"/>
+            </svg>
+        </a>
+        </li>
+    </ul>
 </footer>
-
+<!-- Modale Menu Burger -->
 <div class="modal-menu" id="modal-menu">
     <div class="modal-content">
         <span class="close" id="closeBtn">&times;</span>                         
@@ -150,7 +125,7 @@
         </div>
     </div>
 </div>
-
+<!-- Scripts -->
     <script src="./js/burgerMenu.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="./js/calendly.js"></script>
