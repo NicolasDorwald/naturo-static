@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!form || !submitBtn) return;
 
     form.addEventListener("submit", function(e) {
-        e.preventDefault(); // Empêche le rechargement
+        e.preventDefault();
 
         const data = new FormData(form);
 
@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(response => {
             if (response.ok) {
-                // Masquer le bouton et afficher le message
+                
                 submitBtn.style.display = "none";
                 messageDiv.textContent = "Merci, votre message a été envoyé !";
                 messageDiv.style.color = "green";
-                form.reset(); // Optionnel si tu veux réinitialiser les champs
+                form.reset(); 
             } else {
                 messageDiv.textContent = "Oups, une erreur est survenue. Réessayez.";
                 messageDiv.style.color = "red";
